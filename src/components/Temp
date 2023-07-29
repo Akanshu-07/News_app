@@ -1,15 +1,28 @@
+
+
 import './App.css';
+
 import React, { useState } from 'react'
 import Navbar from './components/Navbar';
 import News from './components/News';
-import { BrowserRouter,Routes,Route,} from "react-router-dom";
+
+import {
+  BrowserRouter ,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 import LoadingBar from 'react-top-loading-bar'
 
 const App =()=> {
-  const apikey=process.env.REACT_APP_NEWS_API
+  const apikey=process.env.REACT_NEWS_API
   
   const [progress, setProgress] = useState(0);
- 
+  
+
+
+  setProgress(progress)
+  
     return (
       <div>
         <BrowserRouter>
@@ -17,7 +30,7 @@ const App =()=> {
         <LoadingBar
         height={3}
         color='#f11946'
-        progress={progress}
+        progress={this.state.progress}
         />
 
           <Navbar/>  
@@ -45,3 +58,4 @@ const App =()=> {
 }
 
 export default App
+
